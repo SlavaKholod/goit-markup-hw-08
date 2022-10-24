@@ -1,13 +1,16 @@
 /*ПЕРЕМІННІ*/
+
 :root {
+  --font-family: "Roboto", sans-serif;
   --font-color-hed: #212121;
   --font-color-text: #757575;
-  --font-family: "Roboto", sans-serif;
   --brand-color-first: #2196f3;
   --brand-color-second: #2f303a;
   --background-color: #ffffff;
 }
+
 /*Загальні стилі*/
+
 *,
 *::before,
 *::after {
@@ -21,14 +24,45 @@ body {
   font-size: 14px;
   letter-spacing: 0.03em;
 }
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+img {
+  display: block;
+}
 .container {
-  max-width: 1200px;
+  max-width: 1170px;
   margin: 0 auto;
 }
 .section {
   padding: 94px 0;
 }
+
+/* Приховані заголовки */
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
 /* Стилі ХЕДЕРУ*/
+
 .header-container,
 .main-navigation,
 .navigation,
@@ -36,11 +70,10 @@ body {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  justify-content: space-between;
 }
 .page-header {
-  border-bottom: 1px solid #ececec;
   padding: 25px 0;
+  border-bottom: 1px solid #ececec;
 }
 .logo,
 .logo-web {
@@ -51,19 +84,15 @@ body {
   line-height: 1.19;
 }
 .logo {
-  color: var(--font-color-hed);
   margin-right: 93px;
+  color: var(--font-color-hed);
 }
 .logo-web {
   color: var(--brand-color-first);
 }
 .navigation {
-  margin: 0;
-  padding: 0;
 }
 .navigation-item {
-  list-style-type: none;
-  /* display: flex; */
 }
 .navigation-item:not(:last-child) {
   margin-right: 50px;
@@ -75,7 +104,6 @@ body {
   letter-spacing: 0.02em;
   color: var(--font-color-hed);
 }
-
 .navigation-item > a:hover {
   color: var(--brand-color-first);
 }
@@ -86,11 +114,9 @@ body {
   color: var(--brand-color-first);
 }
 .contacts {
-  margin: 0;
-  padding: 0;
+  margin-left: auto;
 }
 .contacts-item {
-  list-style-type: none;
 }
 .contacts-item:nth-child(1) {
   margin-right: 50px;
@@ -110,10 +136,10 @@ body {
 }
 
 /*Стилі секції ГЕРОЯ*/
+
 .hero {
-  background-color: var(--brand-color-second);
-  margin: 0;
   padding: 200px 0;
+  background-color: var(--brand-color-second);
 }
 .hero-text {
   font-weight: 900;
@@ -123,22 +149,21 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--background-color);
-  margin: 0;
   margin-bottom: 30px;
 }
 .hero-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 32px;
   cursor: pointer;
   background-color: var(--brand-color-first);
-  padding: 10px 32px;
-  border: none;
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
   color: var(--background-color);
-  display: block;
-  margin: 0 auto;
+  border: none;
   border-radius: 4px;
 }
 .hero-button:hover {
@@ -149,14 +174,12 @@ body {
 }
 
 /*Стилі секції ОСНОВНІ ІДЕЇ*/
+
 .main-ideas-list {
   display: flex;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
 }
 .main-ideas-item {
-  list-style-type: none;
+  width: calc((100% - 90px) / 4);
 }
 .main-ideas-item:not(:last-child) {
   margin-right: 30px;
@@ -174,15 +197,13 @@ body {
 }
 
 /*Стилі секції ПРИКЛАДИ РОБІТ*/
+
 .main-works {
   padding-top: 0;
 }
 .works-list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
 }
 .section-title {
   font-weight: 700;
@@ -190,27 +211,25 @@ body {
   line-height: 1.17;
   text-align: center;
   color: var(--font-color-hed);
-  margin: 0 0 50px 0;
 }
 .works-list-item {
-  list-style-type: none;
+  margin-top: 50px;
 }
 .works-list-item:not(:last-child) {
   margin-right: 30px;
 }
 
 /*Стилі секції НАША КОМАНДА*/
+
 .our-team {
   background-color: #f5f4fa;
 }
 .team-list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
-  padding: 0;
-  margin: 0;
 }
 .team-list-item {
+  margin-top: 50px;
   list-style-type: none;
   background-color: var(--background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -221,36 +240,36 @@ body {
   margin-right: 30px;
 }
 .team-list-item > h3 {
+  margin-top: 30px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
   color: var(--font-color-hed);
-  margin: 30px 0 0 0;
 }
 .team-list-item > p {
+  margin: 10px 0 30px 0;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
   color: var(--font-color-text);
-  margin: 10px 0 30px 0;
 }
 
 /*Стилі секції ФУТЕРУ*/
 .page-footer {
-  background-color: var(--brand-color-second);
   padding: 60px 0;
+  background-color: var(--brand-color-second);
 }
 .page-footer .logo {
-  color: var(--background-color);
   margin: 0;
+  color: var(--background-color);
 }
 .address-list {
-  margin: 20px 0 0 0;
-  padding: 0;
+  margin-top: 20px;
+  /* padding: 0; */
 }
 .address-list-item {
-  list-style-type: none;
+  /* list-style-type: none; */
 }
 .address-list-item > a {
   text-decoration: none;
@@ -278,8 +297,7 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 0 0 34px 0;
-  padding: 0 0 16px 0;
+  margin-bottom: 50px;
 }
 .filter-buttons > li {
   list-style-type: none;
@@ -307,18 +325,17 @@ body {
 .filter-buttons > li:not(:last-child) {
   margin-right: 8px;
 }
+
 /*Стилі ПОРТФОЛІО*/
+
 .portfolio-samples {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  margin: 0;
-  padding: 0;
 }
 .portfolio-item {
-  list-style-type: none;
-  background-color: var(--background-color);
   margin: 0 30px 30px 0;
+  background-color: var(--background-color);
 }
 .portfolio-item:nth-child(3n) {
   margin-right: 0;
@@ -330,35 +347,21 @@ body {
   border: 1px solid #eeeeee;
   border-top: 0;
   padding: 20px 24px;
-  margin-top: -5px;
 }
 .portfolio-item > a {
   text-decoration: none;
 }
 .portfolio-item h2 {
+  margin-bottom: 4px;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--font-color-hed);
-  margin: 0 0 4px 0;
 }
 .portfolio-item p {
   font-size: 16px;
   line-height: 1.87;
   color: var(--font-color-text);
-  margin: 0;
 }
 
-.visually-hidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
-}
