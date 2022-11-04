@@ -7,6 +7,7 @@
   --brand-color-first: #2196f3;
   --brand-color-second: #2f303a;
   --background-color: #ffffff;
+  --icon-color: #afb1b8;
 }
 
 /*Загальні стилі*/
@@ -75,7 +76,6 @@ img {
   align-items: center;
 }
 .page-header {
-  /* padding: 25px 0; */
   border-bottom: 1px solid #ececec;
 }
 .logo,
@@ -120,6 +120,8 @@ img {
   color: var(--brand-color-first);
 }
 .contacts {
+  display: flex;
+  align-items: center;
   margin-left: auto;
 }
 /* .contacts-item {
@@ -128,7 +130,8 @@ img {
   margin-right: 50px;
 }
 .contacts-item > a {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 25px 0;
   text-decoration: none;
   font-weight: 500;
@@ -142,12 +145,29 @@ img {
 .contacts-item > a:focus {
   color: var(--brand-color-first);
 }
-
+.contact-icon {
+  margin-right: 10px;
+  fill: currentColor;
+  stroke: currentColor;
+}
+.contacts-item > a:hover .contact-icon {
+  stroke: var(--brand-color-first);
+}
+.contact-icon:focus .contact-icon {
+  stroke: var(--brand-color-first);
+}
 /*Стилі секції ГЕРОЯ*/
 
 .hero {
   padding: 200px 0;
-  background-color: var(--brand-color-second);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/hero-cover.jpg");
+  background-repeat: no-repeat;
+  /* background-size: contain; */
+  background-position: center;
 }
 .hero-text {
   font-weight: 900;
@@ -189,10 +209,18 @@ img {
 .main-ideas-item {
   width: calc((100% - 90px) / 4);
 }
+.ideas-icon-wraper {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+}
 .main-ideas-item:not(:last-child) {
   margin-right: 30px;
 }
 .main-ideas-item > h3 {
+  margin-top: 30px;
   margin-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
@@ -261,16 +289,86 @@ img {
   color: var(--font-color-hed);
 }
 .team-list-item p {
+  margin-bottom: 16px;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
   color: var(--font-color-text);
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.social-link > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--background-color);
+}
+.social-link > a:hover {
+  background-color: var(--brand-color-first);
+}
+.social-link > a:focus {
+  background-color: var(--brand-color-first);
+}
+.social-link:not(:last-child) {
+  margin-right: 10px;
+}
+.social-icon {
+  fill: var(--icon-color);
+}
+.social-link > a:hover .social-icon {
+  fill: var(--background-color);
+}
+.social-link > a:focus .social-icon {
+  fill: var(--background-color);
+}
+
+/* Секція наші клієнти */
+.clients-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.client-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+.client-list-item > a {
+  display: flex;
+  padding: 15px 31px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+.client-icon {
+  fill: var(--icon-color);
+}
+.client-list-item > a:hover {
+  border-color: var(--brand-color-first);
+}
+.client-list-item > a:focus {
+  border-color: var(--brand-color-first);
+}
+.client-list-item > a:hover .client-icon {
+  fill: var(--brand-color-first);
+}
+.client-list-item > a:focus .client-icon {
+  fill: var(--brand-color-first);
 }
 
 /*Стилі секції ФУТЕРУ*/
 .page-footer {
   padding: 60px 0;
   background-color: var(--brand-color-second);
+}
+.footer-container {
+  display: inline-block;
+  margin-right: 70px;
+  vertical-align: top;
 }
 .page-footer .logo {
   display: block;
@@ -299,6 +397,20 @@ img {
 }
 .address-list-item > .post-address {
   color: var(--background-color);
+}
+.links-footer {
+  display: block;
+  margin: 12px 0 20px 0;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: var(--background-color);
+}
+.footer-link > a {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-icon {
+  fill: var(--background-color);
 }
 
 /*СТОРІНКА ПОРТФОЛІО*/
@@ -332,13 +444,13 @@ img {
   color: var(--background-color);
   background-color: var(--brand-color-first);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-  0px 2px 2px rgba(0, 0, 0, 0.12);
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .filter-button:focus {
   color: var(--background-color);
   background-color: var(--brand-color-first);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-  0px 2px 2px rgba(0, 0, 0, 0.12);
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .filter-buttons > li:not(:last-child) {
   margin-right: 8px;
@@ -361,6 +473,14 @@ img {
 }
 .portfolio-item > a {
   text-decoration: none;
+}
+.portfolio-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.portfolio-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .portfolio-item h2 {
   margin-bottom: 4px;
