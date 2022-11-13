@@ -572,7 +572,9 @@ img {
   height: 100%;
   padding: 63px 24px;
   background-color: rgba(33, 150, 243, 0.9);
-  transition: transform var(--animation-time) var(--timing-function);
+  opacity: 0;
+  transition: transform var(--animation-time) var(--timing-function),
+    opacity var(--animation-time) var(--timing-function);
 }
 .portfolio-item-overlay > p {
   font-family: inherit;
@@ -583,9 +585,11 @@ img {
 }
 .portfolio-item > a:hover .portfolio-item-overlay {
   transform: translateY(-100%);
+  opacity: 1;
 }
 .portfolio-item > a:focus .portfolio-item-overlay {
   transform: translateY(-100%);
+  opacity: 1;
 }
 
 .backdrop {
@@ -610,7 +614,7 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  min-width: 528px;
+  min-width: 33%;
   min-height: 581px;
   background-color: var(--background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -619,16 +623,22 @@ img {
   transition: scale var(--animation-time) var(--timing-function);
 }
 .backdrop.is-hidden .modal {
-transform: translate(-50%, -50%) scale(0.9);
+  transform: translate(-50%, -50%) scale(0.9);
 }
 .close-button {
   display: flex;
   margin: 8px 8px auto auto;
   padding: 10px;
+  cursor: pointer;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--background-color);
+  transition: borber-color var(--animation-time) var(--timing-function);
+}
+.close-button:hover,
+:focus {
+  border-color: #000;
 }
 .close-icon {
- fill: #000;
+  fill: #000;
 }
