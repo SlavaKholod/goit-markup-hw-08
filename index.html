@@ -45,7 +45,7 @@
               <svg class="contact-icon" width="16" height="12">
                 <use href="./images/icons.svg#icon-envelope"></use>
               </svg>
-              <span>info@devstudio.com</span>
+              info@devstudio.com
             </a>
           </li>
           <li class="contacts-item">
@@ -68,7 +68,7 @@
             Ефективні рішення для <br />
             вашого бізнесу
           </h1>
-          <button type="button" class="hero-button">Замовити послугу</button>
+          <button data-modal-open type="button" class="hero-button">Замовити послугу</button>
         </div>
       </section>
       <!-- Основні критерії в роботі -->
@@ -440,5 +440,15 @@
         </div>
       </div>
     </footer>
+    <div data-modal class="backdrop is-hidden">
+      <div class="modal">
+        <button data-modal-close class="close-button" type="button">
+          <svg class="close-icon" width="11" height="11">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

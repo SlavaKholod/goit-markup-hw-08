@@ -8,6 +8,8 @@
   --brand-color-second: #2f303a;
   --background-color: #ffffff;
   --icon-color: #afb1b8;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-time: 250ms;
 }
 
 /*Загальні стилі*/
@@ -49,7 +51,6 @@ img {
 .section {
   padding: 94px 0;
 }
-
 /* Приховані заголовки */
 
 .visually-hidden {
@@ -109,12 +110,31 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--font-color-hed);
+  transition: color var(--animation-time) var(--timing-function);
 }
 .navigation-item > a:hover {
   color: var(--brand-color-first);
 }
 .navigation-item > a:focus {
   color: var(--brand-color-first);
+}
+.navigation-item > a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--brand-color-first);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform var(--animation-time) var(--timing-function);
+}
+.navigation-item > a:hover::after {
+  transform: scaleX(1);
+}
+.navigation-item > a:focus::after {
+  transform: scaleX(1);
 }
 .navigation-item > .current-page {
   color: var(--brand-color-first);
@@ -128,14 +148,17 @@ img {
   height: 4px;
   background-color: var(--brand-color-first);
   border-radius: 2px;
+  transform: none;
 }
+
 .contacts {
   display: flex;
   align-items: center;
   margin-left: auto;
 }
-/* .contacts-item {
-} */
+.contacts-item {
+  transition: currentColor var(--animation-time) var(--timing-function);
+}
 .contacts-item:nth-child(1) {
   margin-right: 50px;
 }
@@ -148,6 +171,7 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--font-color-text);
+  transition: color var(--animation-time) var(--timing-function);
 }
 .contacts-item > a:hover {
   color: var(--brand-color-first);
@@ -159,11 +183,14 @@ img {
   margin-right: 10px;
   fill: currentColor;
   stroke: currentColor;
+  /* transition: color var(--animation-time) var(--timing-function); */
 }
 .contacts-item > a:hover .contact-icon {
+  fill: var(--brand-color-first);
   stroke: var(--brand-color-first);
 }
 .contact-icon:focus .contact-icon {
+  fill: var(--brand-color-first);
   stroke: var(--brand-color-first);
 }
 /*Стилі секції ГЕРОЯ*/
@@ -205,6 +232,7 @@ img {
   color: var(--background-color);
   border: none;
   border-radius: 4px;
+  transition: background-color var(--animation-time) var(--timing-function);
 }
 .hero-button:hover {
   background-color: #188ce8;
@@ -333,6 +361,7 @@ img {
   height: 44px;
   border-radius: 50%;
   background-color: var(--background-color);
+  transition: background-color var(--animation-time) var(--timing-function);
 }
 .social-link > a:hover {
   background-color: var(--brand-color-first);
@@ -345,6 +374,7 @@ img {
 }
 .social-icon {
   fill: var(--icon-color);
+  transition: fill var(--animation-time) var(--timing-function);
 }
 .social-link > a:hover .social-icon {
   fill: var(--background-color);
@@ -368,9 +398,11 @@ img {
   padding: 15px 31px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: border-color 250ms var(--timing-function);
 }
 .client-icon {
   fill: var(--icon-color);
+  transition: fill 250ms var(--timing-function);
 }
 .client-list-item > a:hover {
   border-color: var(--brand-color-first);
@@ -417,6 +449,7 @@ img {
   font-style: normal;
   line-height: 1.71;
   color: rgba(255, 255, 255, 0.6);
+  transition: color var(--animation-time) var(--timing-function);
 }
 .address-list-item > a:hover {
   color: var(--brand-color-first);
@@ -468,6 +501,9 @@ img {
   cursor: pointer;
   border-radius: 4px;
   border: none;
+  transition: color var(--animation-time) var(--timing-function),
+    background-color var(--animation-time) var(--timing-function),
+    box-shadow var(--animation-time) var(--timing-function);
 }
 .filter-button:hover {
   color: var(--background-color);
@@ -501,13 +537,15 @@ img {
   padding: 20px 24px;
 }
 .portfolio-item > a {
+  display: block;
   text-decoration: none;
+  transition: box-shadow var(--animation-time) var(--timing-function);
 }
-.portfolio-item:hover {
+.portfolio-item > a:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.portfolio-item:focus {
+.portfolio-item > a:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -523,4 +561,74 @@ img {
   font-size: 16px;
   line-height: 1.87;
   color: var(--font-color-text);
+}
+.portfolio-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-item-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  background-color: rgba(33, 150, 243, 0.9);
+  transition: transform var(--animation-time) var(--timing-function);
+}
+.portfolio-item-overlay > p {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--background-color);
+}
+.portfolio-item > a:hover .portfolio-item-overlay {
+  transform: translateY(-100%);
+}
+.portfolio-item > a:focus .portfolio-item-overlay {
+  transform: translateY(-100%);
+}
+
+.backdrop {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+  transition: opacity var(--animation-time) var(--timing-function);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: scale var(--animation-time) var(--timing-function);
+}
+.backdrop.is-hidden .modal {
+transform: translate(-50%, -50%) scale(0.9);
+}
+.close-button {
+  display: flex;
+  margin: 8px 8px auto auto;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--background-color);
+}
+.close-icon {
+ fill: #000;
 }
