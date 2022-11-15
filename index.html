@@ -139,7 +139,7 @@
                 alt="Розробка десктопних додатків"
                 width="370"
               />
-              <h3 class="overlay-title">Десктопні додатки</h3>
+              <p class="overlay-title">Десктопні додатки</p>
             </li>
             <li class="works-list-item">
               <img
@@ -147,11 +147,11 @@
                 alt="Розробка мобільних додатків"
                 width="370"
               />
-              <h3 class="overlay-title">Мобільні додатки</h3>
+              <p class="overlay-title">Мобільні додатки</p>
             </li>
             <li class="works-list-item">
               <img src="./images/img3.jpg" alt="Дизайн додатків" width="370" />
-              <h3 class="overlay-title">Дизайнерські рішення</h3>
+              <p class="overlay-title">Дизайнерські рішення</p>
             </li>
           </ul>
         </div>
@@ -440,8 +440,21 @@
             </li>
           </ul>
         </div>
+        <div class="mail-form-wraper">
+          <form action="" name="mail-form" autocomplete="on" class="mail-form">
+            <p>Підпишіться на розсилку</p>
+            <input type="email" name="email" id="email" placeholder="E-mail" class="email-input">
+            <button type="submit" class="email-submit-button">
+              <span class="button-label">Підписатися</span>
+              <svg class="form-submit-icon" width="24" height="24">
+                <use href=""></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
+
     <div data-modal class="backdrop is-hidden">
       <div class="modal">
         <button data-modal-close class="close-button" type="button">
@@ -451,6 +464,7 @@
         </button>
       </div>
     </div>
+
     <script src="./js/modal.js"></script>
   </body>
 </html>
