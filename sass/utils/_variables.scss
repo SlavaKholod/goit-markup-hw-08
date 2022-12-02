@@ -1,0 +1,26 @@
+
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+$animation-time: 250ms;
+
+$colors: (
+  "font-color-hed": #212121,
+  "font-color-text": #757575,
+  "brand-color-first": #2196f3,
+  "brand-color-second": #2f303a,
+  "background-color": #ffffff,
+  "icon-color": #afb1b8,
+);
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}
+$font-family: "Roboto", sans-serif;
+
+$fonts: (
+    'font-size': 14px,
+    'letter-spacing': 0.03em,
+);
+
+@function getFonts($key) {
+    @return map-get($fonts, $key);
+  }
