@@ -1,0 +1,36 @@
+// Секція наші клієнти
+
+.clients-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.client-list__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.client-list__link {
+  display: flex;
+  padding: 15px 30px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  transition: border-color $animation-time $timing-function;
+
+  &:hover,
+  &:focus {
+    border-color: getColor("brand-color-first");
+  }
+
+  &:hover .client-list__icon,
+  &:focus .client-list__icon {
+    fill: getColor("brand-color-first");
+  }
+}
+
+.client-list__icon {
+  fill: getColor("icon-color");
+  transition: fill $animation-time $timing-function;
+}
+

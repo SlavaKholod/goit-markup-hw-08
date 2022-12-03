@@ -1,0 +1,34 @@
+// Стилі секції ОСНОВНІ ІДЕЇ
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+}
+
+.ideas__list {
+  display: flex;
+}
+
+.ideas__item {
+  width: calc((100% - 90px) / 4);
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+
+.ideas__title {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: getColor("font-color-hed");
+}
+.ideas__text {
+  line-height: 1.71;
+  color: getColor("font-color-text");
+}

@@ -1,0 +1,54 @@
+// Стилі секції ФУТЕРУ
+
+.page-footer {
+  padding: 60px 0;
+  background-color: getColor("brand-color-second");
+}
+
+.footer-wraper {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-container {
+  display: inline-block;
+  margin-right: 70px;
+  vertical-align: top;
+}
+
+.page-footer__logo {
+  display: block;
+  margin-right: 0;
+  margin-bottom: 20px;
+  color: getColor("background-color");
+}
+
+.address-list__item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.address-list__link {
+  text-decoration: none;
+  font-style: normal;
+  line-height: 1.71;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color $animation-time $timing-function;
+
+  &:hover,
+  &:focus {
+    color: getColor("brand-color-first");
+  }
+  &--inverse {
+    color: getColor("background-color");
+  }
+}
+
+.footer-links__label {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: getColor("background-color");
+}
+ 

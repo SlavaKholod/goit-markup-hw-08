@@ -1,0 +1,46 @@
+// Посилання у соцсітях
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-links__item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-links__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: getColor("background-color");
+  transition: background-color $animation-time $timing-function;
+
+  &:hover,
+  &:focus {
+    background-color: getColor("brand-color-first");
+  }
+}
+
+.social-links__icon {
+  fill: getColor("icon-color");
+  transition: fill $animation-time $timing-function;
+}
+
+.social-links__link:hover .social-links__icon {
+  fill: getColor("background-color");
+}
+.social-links__link:focus .social-links__icon {
+  fill: getColor("background-color");
+}
+
+.footer-social-links__link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-social-links__icon {
+  fill: getColor("background-color");
+}

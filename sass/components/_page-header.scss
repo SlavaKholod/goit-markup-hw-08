@@ -1,4 +1,4 @@
-/* Стилі ХЕДЕРУ*/
+// Стилі ХЕДЕРУ
 
 .nav-container,
 .site-nav,
@@ -115,14 +115,9 @@
   margin-right: 10px;
   fill: currentColor;
   stroke: currentColor;
-  /* transition: color var(--animation-time) var(--timing-function); */
 }
 .contact__link:hover,
 .contacts__link:focus .contacts__icon {
   fill: getColor("brand-color-first");
   stroke: getColor("brand-color-first");
 }
-// .contacts__link:focus .contact__icon {
-//   fill: getColor("brand-color-first");
-//   stroke: getColor("brand-color-first");
-// }

@@ -1,0 +1,113 @@
+// Стилі кнопок
+%btn {
+  display: block;
+  cursor: pointer;
+  background-color: getColor("brand-color-first");
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: getColor("background-color");
+  border: none;
+  border-radius: 4px;
+  transition: background-color $animation-time $timing-function;
+}
+
+// Конопка виклику форми
+
+.hero__btn {
+  @extend %btn;
+  margin: 0 auto;
+  padding: 10px 32px;
+  &:hover,
+  &:active {
+    background-color: getColor("btn-acsent");
+  }
+}
+
+// Конопка підкиски на розсилку
+
+.mail-form__btn {
+  @extend %btn;
+  display: inline-flex;
+  padding: 10px 28px;
+  &:hover,
+  &:active {
+    background-color: getColor("btn-acsent");
+  }
+}
+
+.btn__icon {
+  margin-left: 10px;
+  fill: getColor("background-color");
+}
+
+// Кнопки фільтру
+
+.filter-buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.filter-buttons__item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.filter-buttons__btn {
+  @extend %btn;
+  padding: 6px 22px;
+  color: getColor("font-color-hed");
+  background-color: #f5f4fa;
+  transition: color $animation-time $timing-function,
+    background-color $animation-time $timing-function,
+    box-shadow $animation-time $timing-function;
+
+  &:hover,
+  &:focus {
+    color: getColor("background-color");
+    background-color: getColor("brand-color-first");
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+
+// Кнопка закриття вікна
+
+.btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: getColor("background-color");
+
+  &:hover,
+  &:focus .btn-close__icon {
+    fill: getColor("brand-color-first");
+  }
+}
+
+.btn-close__icon {
+  fill: getColor("font-colot-hed");
+  transition: fill $animation-time $timing-function;
+}
+
+// Кнопка відправки форми
+
+.sale-form__submit-btn {
+  @extend %btn;
+  margin: 0 auto;
+  padding: 10px 52px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  &:hover,
+  &:active {
+    background-color: getColor("btn-acsent");
+  }
+}
