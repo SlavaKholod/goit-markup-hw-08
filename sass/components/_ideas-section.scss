@@ -3,19 +3,47 @@
 .icon-container {
   display: flex;
   justify-content: center;
+  width: 100%;
   padding: 25px 0;
   background-color: #f5f4fa;
   border-radius: 4px;
 }
 
 .ideas__list {
-  display: flex;
+  
+  @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  @media screen and (min-width: getPoint("tablet")) {
+    display: flex;
+  }
 }
 
 .ideas__item {
-  width: calc((100% - 90px) / 4);
-  &:not(:last-child) {
-    margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+
+  @media screen and (max-width: getPoint("phone")) {
+    width: 100%;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
+    width: calc((100% - 30px) / 2);
+    &:nth-child(2n) {
+      margin-left: 30px;
+    }
+  }
+
+  @media screen and (min-width: getPoint("tablet")) {
+    width: calc((100% - 90px) / 4);
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+    margin-bottom: 0;
   }
 }
 
@@ -28,6 +56,7 @@
   text-transform: uppercase;
   color: getColor("font-color-hed");
 }
+
 .ideas__text {
   line-height: 1.71;
   color: getColor("font-color-text");

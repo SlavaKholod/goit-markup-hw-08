@@ -1,33 +1,37 @@
 //   Стилі секції ПРИКЛАДИ РОБІТ
 
-  .works {
-    padding-top: 0;
-  }
+.works {
+  padding-top: 0;
 
-  .works-list {
-    display: flex;
-    flex-flow: row wrap;
+  @media screen and (max-width: getPoint("tablet")) {
+    display: none;
   }
+}
 
-  .works-list__item {
-    position: relative;
-    width: calc((100% / 3) - 30px);
-    
-    &:not(:last-child) {
-        margin-right: 30px;
-      }
-  }
+.works-list {
+  display: flex;
+  flex-flow: row wrap;
+}
 
-  .works-list__title {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 27px 0;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.14;
-    text-transform: uppercase;
-    color: getColor('background-color');
-    background-color: rgba(47, 48, 58, 0.8);
-    text-align: center;
+.works-list__item {
+  position: relative;
+  width: calc((100% / 3) - 30px);
+
+  &:not(:last-child) {
+    margin-right: 30px;
   }
+}
+
+.works-list__title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 27px 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: getColor("background-color");
+  background-color: rgba(47, 48, 58, 0.8);
+  text-align: center;
+}

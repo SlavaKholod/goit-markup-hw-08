@@ -35,22 +35,42 @@ img {
 }
 
 .container {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+
+  @media screen and (max-width: getPoint("phone")) {
+    width: getPoint("phone");
+  }
+  @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
+    width: getPoint("tablet");
+  }
+  @media screen and (min-width: getPoint("tablet")) {
+    max-width: getPoint("desktop");
+  }
 }
 
 .section {
-  padding: 94px 0;
+  @media screen and (max-width: getPoint("tablet")) {
+    padding: 60px 0;
+  }
+  @media screen and (min-width: getPoint("tablet")) {
+    padding: 94px 0;
+  }
 }
 
 .section-title {
-  margin-bottom: 50px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
-  color: getColor('font-color-hed');
+  color: getColor("font-color-hed");
+
+  @media screen and (max-width: getPoint("tablet")) {
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: getPoint("tablet")) {
+    margin-bottom: 50px;
+  }
 }
 
 .is-hidden {

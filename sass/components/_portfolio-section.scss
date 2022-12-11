@@ -1,17 +1,43 @@
 // СТОРІНКА ПОРТФОЛІО
 
 .portfolio {
-  padding: 94px 0;
+  @media screen and (max-width: getPoint("tablet")) {
+    padding: 60px 0;
+  }
+
+  @media screen and (min-width: getPoint("tablet")) {
+    padding: 94px 0;
+  }
 }
 
 .portfolio-samples {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 30px;
+  @media screen and (min-width: 481px) {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+  }
 }
 
 .portfolio-item {
   background-color: getColor("background-color");
+
+  @media screen and (max-width: getPoint("phone")) {
+    width: 100%;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
+    width: calc((100% - 30px) / 2);
+    &:nth-child(-n + 2) .portfolio-item__container {
+      height: 146px;
+    }
+  }
+
+  @media screen and (min-width: getPoint("tablet")) {
+    width: calc((100% - 60px) / 3);
+  }
 }
 
 .portfolio-item__link {

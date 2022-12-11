@@ -1,8 +1,17 @@
 // Форма розсилки почти
 
-.mail-form-container {
-  display: inline-block;
-  margin-left: auto;
+.mail-form {
+  @media screen and (max-width: getPoint("tablet")) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (min-width: getPoint("tablet")) {
+    display: inline-block;
+    margin-left: auto;
+    padding-top: 10px;
+  }
 }
 
 .mail-form__label {
@@ -14,9 +23,7 @@
 }
 
 .mail-form__input {
-  width: 358px;
   height: 50px;
-  margin-right: 12px;
   padding-left: 16px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -26,6 +33,16 @@
   font-size: 16px;
   line-height: 1.25;
   color: rgba(255, 255, 255, 0.6);
+
+  @media screen and (max-width: getPoint("tablet")) {
+    width: 450px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: getPoint("tablet")) {
+    width: 358px;
+    margin-right: 12px;
+  }
 }
 
 // Форма замовлення
@@ -45,7 +62,7 @@
   position: absolute;
   bottom: 11px;
   left: 12px;
-  fill: getColor('font-color-hed');
+  fill: getColor("font-color-hed");
   transition: fill $animation-time $timing-function;
 }
 
@@ -66,7 +83,7 @@
 .sale-form__label {
   font-size: 12px;
   line-height: 1.17;
-  color: getColor('font-color-text');
+  color: getColor("font-color-text");
   margin-bottom: 4px;
 }
 
@@ -89,16 +106,15 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.7;
-  color: getColor('font-color-text');
+  color: getColor("font-color-text");
   margin-bottom: 30px;
 }
 
 .sale-form__checkbox-cont {
   width: 16px;
   height: 15px;
-  margin-left: 12px;
   margin-right: 7px;
   border: 1px solid;
   border-color: #000;
@@ -113,7 +129,6 @@
 
 .sale-form__checkbox-icon {
   position: absolute;
-  left: 12px;
   opacity: 0;
   transition: opacity $animation-time $timing-function;
 }

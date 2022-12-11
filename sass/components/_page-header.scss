@@ -1,16 +1,35 @@
 // Стилі ХЕДЕРУ
-
-.nav-container,
-.site-nav,
-.contacts {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-}
 .page-header {
   border-bottom: 1px solid #ececec;
 }
+
+.nav-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  position: relative;
+
+  @media screen and (max-width: getPoint("phone")) {
+    min-height: 60px;
+  }
+  @media screen and (min-width: 481px) {
+    min-height: 80px;
+  }
+}
+
+.site-nav {
+  @media screen and (max-width: getPoint("phone")) {
+    display: none;
+  }
+
+  @media screen and (min-width: 481px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .logo {
+  display: block;
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -27,14 +46,21 @@
 .site-nav__item {
   position: relative;
 
-  &:not(:last-child) {
-    margin-right: 50px;
+  @media screen and (max-width: getPoint("phone")) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 481px) {
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
   }
 }
 
 .site-nav__link {
   display: block;
-  padding: 25px 0;
   text-decoration: none;
   font-weight: 500;
   line-height: 1.14;
@@ -47,17 +73,27 @@
     color: getColor("brand-color-first");
   }
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 4px;
-    background-color: getColor("brand-color-first");
-    border-radius: 2px;
-    transform: scaleX(0);
-    transition: transform $animation-time $timing-function;
+  @media screen and (max-width: getPoint("phone")) {
+    font-size: 40px;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 481px) {
+    padding: 32px 0;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background-color: getColor("brand-color-first");
+      border-radius: 2px;
+      transform: scaleX(0);
+      transition: transform $animation-time $timing-function;
+    }
   }
 }
 
@@ -71,33 +107,53 @@
 .site-nav__link--current {
   color: getColor("brand-color-first");
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 4px;
-    background-color: getColor("brand-color-first");
-    border-radius: 2px;
-    transform: none;
+  @media screen and (min-width: 481px) {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background-color: getColor("brand-color-first");
+      border-radius: 2px;
+      transform: none;
+    }
   }
 }
 
 .contacts {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
+  @media screen and (max-width: getPoint("phone")) {
+    display: none;
+  }
 
-.contacts__item:nth-child(1) {
-  margin-right: 50px;
+  @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: getPoint("tablet")) {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+}
+.contacts__item {
+  @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
+    &:nth-child(1) {
+      margin-bottom: 10px;
+    }
+  }
+
+  @media screen and (min-width: getPoint("tablet")) {
+    &:nth-child(1) {
+      margin-right: 50px;
+    }
+  }
 }
 
 .contacts__link {
   display: flex;
   align-items: center;
-  padding: 25px 0;
   text-decoration: none;
   font-weight: 500;
   line-height: 1.14;
@@ -120,4 +176,74 @@
 .contacts__link:focus .contacts__icon {
   fill: getColor("brand-color-first");
   stroke: getColor("brand-color-first");
+}
+
+// Мобільне меню
+
+.mobile-menu {
+  @media screen and (max-width: getPoint("phone")) {
+    display: none;
+    padding: 0 25px 48px 25px;
+    &.is-open {
+      display: block;
+      height: 100vh;
+    }
+  }
+  @media screen and (min-width: 481px) {
+    display: none;
+  }
+}
+
+.site-nav.mobile {
+  @media screen and (max-width: getPoint("phone")) {
+    display: block;
+    margin-bottom: 302px;
+  }
+  @media screen and (min-width: 481px) {
+    display: none;
+  }
+}
+
+.contacts.mobile {
+  margin-bottom: 64px;
+  @media screen and (max-width: getPoint("phone")) {
+    display: block;
+  }
+  @media screen and (min-width: 481px) {
+    display: none;
+  }
+}
+
+.contacts__link--mob-phone {
+  font-size: 34px;
+  color: getColor("brand-color-first");
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+.contacts__link--mobile {
+  font-size: 24px;
+  padding: 0;
+}
+
+.menu-social-links {
+  display: flex;
+}
+
+.menu-social-links__item {
+  padding: 0 10px;
+  &:not(:last-child) {
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+  }
+  &:nth-child(1) {
+    padding-left: 0;
+  }
+}
+
+.menu-social-links__link {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: getColor("brand-color-first");
 }

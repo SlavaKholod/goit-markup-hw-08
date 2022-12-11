@@ -22,10 +22,22 @@
     <header class="page-header">
       <!-- навігація по сайту -->
       <div class="nav-container container">
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-expanded="false"
+          data-menu-button
+        >
+          <svg width="40" height="40" aria-label="Перемикач мобільного меню">
+            <use class="icon-cross" href="./images/icons.svg#icon-close"></use>
+            <use class="icon-menu" href="./images/icons.svg#icon-menu"></use>
+          </svg>
+        </button>
+        <a href="./index.html" class="logo">
+          <span class="logo__text">Web</span>Studio
+        </a>
+
         <nav class="site-nav">
-          <a href="./index.html" class="logo">
-            <span class="logo__text">Web</span>Studio
-          </a>
           <ul class="site-nav">
             <li class="site-nav__item">
               <a href="./index.html" class="site-nav__link">Студія</a>
@@ -61,6 +73,60 @@
             </a>
           </li>
         </ul>
+
+        <div class="mobile-menu" data-menu>
+          <nav class="site-nav mobile">
+            <ul class="site-nav mobile">
+              <li class="site-nav__item">
+                <a href="./index.html" class="site-nav__link">Студія</a>
+              </li>
+              <li class="site-nav__item">
+                <a
+                  href="./portfolio.html"
+                  class="site-nav__link site-nav__link--current"
+                  >Портфоліо</a
+                >
+              </li>
+              <li class="site-nav__item">
+                <a href="" class="site-nav__link">Контакти</a>
+              </li>
+            </ul>
+          </nav>
+
+          <ul class="contacts mobile">
+            <li class="contacts__item contacts__item--mobile">
+              <a
+                href="tel:+380961111111"
+                class="contacts__link contacts__link--mob-phone"
+              >
+                +38 096 111 11 11
+              </a>
+            </li>
+            <li class="contacts__item contacts__item--mobile">
+              <a
+                href="mailto:info@devstudio.com"
+                class="contacts__link contacts__link--mobile"
+              >
+                info@devstudio.com
+              </a>
+            </li>
+          </ul>
+
+          <ul class="menu-social-links">
+            <li class="menu-social-links__item">
+              <a href="" class="menu-social-links__link"> Instagram </a>
+            </li>
+            <li class="menu-social-links__item">
+              <a href="" class="menu-social-links__link"> Twitter </a>
+            </li>
+            <li class="menu-social-links__item">
+              <a href="" class="menu-social-links__link"> Facebook </a>
+            </li>
+            <li class="menu-social-links__item">
+              <a href="" class="menu-social-links__link"> LinkedIn </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
 
@@ -106,7 +172,11 @@
               >
                 <div class="portfolio-item__img-wrapper">
                   <img
-                    src="./images/portfolio-1.jpg"
+                    srcset="
+                      ./images/portfolio-1-370.jpg 1x,
+                      ./images/portfolio-1-740.jpg 2x
+                    "
+                    src="./images/portfolio-1-370.jpg"
                     alt="Веб-сайт для Технокряк"
                     width="370"
                   />
@@ -134,7 +204,11 @@
               >
                 <div class="portfolio-item__img-wrapper">
                   <img
-                    src="./images/portfolio-2.jpg"
+                    srcset="
+                      ./images/portfolio-2-370.jpg 1x,
+                      ./images/portfolio-2-740.jpg 2x
+                    "
+                    src="./images/portfolio-2-370.jpg"
                     alt="Дизайн постера New Orlean vs Golden Star"
                     width="370"
                   />
@@ -164,7 +238,11 @@
               >
                 <div class="portfolio-item__img-wrapper">
                   <img
-                    src="./images/portfolio-3.jpg"
+                    srcset="
+                      ./images/portfolio-3-370.jpg 1x,
+                      ./images/portfolio-3-740.jpg 2x
+                    "
+                    src="./images/portfolio-3-370.jpg"
                     alt="Додаток для ресторану"
                     width="370"
                   />
@@ -192,7 +270,11 @@
               >
                 <div class="portfolio-item__img-wrapper">
                   <img
-                    src="./images/portfolio-4.jpg"
+                    srcset="
+                      ./images/portfolio-4-370.jpg 1x,
+                      ./images/portfolio-4-740.jpg 2x
+                    "
+                    src="./images/portfolio-4-370.jpg"
                     alt="Маркетинг проєкту"
                     width="370"
                   />
@@ -220,7 +302,11 @@
               >
                 <div class="portfolio-item__img-wrapper">
                   <img
-                    src="./images/portfolio-5.jpg"
+                    srcset="
+                      ./images/portfolio-5-370.jpg 1x,
+                      ./images/portfolio-5-740.jpg 2x
+                    "
+                    src="./images/portfolio-5-370.jpg"
                     alt="Додаток Boxes"
                     width="370"
                   />
@@ -248,7 +334,11 @@
               >
                 <div class="portfolio-item__img-wrapper">
                   <img
-                    src="./images/portfolio-6.jpg"
+                    srcset="
+                      ./images/portfolio-6-370.jpg 1x,
+                      ./images/portfolio-6-740.jpg 2x
+                    "
+                    src="./images/portfolio-6-370.jpg"
                     alt="Веб-сайт"
                     width="370"
                   />
@@ -278,7 +368,11 @@
               >
                 <div class="portfolio-item__img-wrapper">
                   <img
-                    src="./images/portfolio-7.jpg"
+                    srcset="
+                      ./images/portfolio-7-370.jpg 1x,
+                      ./images/portfolio-7-740.jpg 2x
+                    "
+                    src="./images/portfolio-7-370.jpg"
                     alt="Дизайн видання"
                     width="370"
                   />
@@ -306,7 +400,11 @@
               >
                 <div class="portfolio-item__img-wrapper">
                   <img
-                    src="./images/portfolio-8.jpg"
+                    srcset="
+                      ./images/portfolio-8-370.jpg 1x,
+                      ./images/portfolio-8-740.jpg 2x
+                    "
+                    src="./images/portfolio-8-370.jpg"
                     alt="Проєкт LAB"
                     width="370"
                   />
@@ -334,7 +432,11 @@
               >
                 <div class="portfolio-item__img-wrapper">
                   <img
-                    src="./images/portfolio-9.jpg"
+                    srcset="
+                      ./images/portfolio-9-370.jpg 1x,
+                      ./images/portfolio-9-740.jpg 2x
+                    "
+                    src="./images/portfolio-9-370.jpg"
                     alt="Додаток для бізнесу"
                     width="370"
                   />
@@ -360,87 +462,89 @@
     <!-- ФУТЕР СТОРІНКИ -->
     <footer class="page-footer">
       <div class="footer-wraper container">
-        <div class="footer-container">
-          <a href="./index.html" class="logo page-footer__logo">
-            <span class="logo__text">Web</span>Studio
-          </a>
-          <!-- Контактна інформація -->
-          <address class="footer-address">
-            <ul class="address-list">
-              <li class="address-list__item">
-                <a
-                  href="https://goo.gl/maps/ABmhvAyWDzysGnkC7"
-                  target="_blank"
-                  rel="noopener nofollow noreferrer"
-                  class="address-list__link address-list__link--inverse"
-                  >м. Київ, пр-т Лесі Українки, 26</a
-                >
+        <div class="footer-cotacts-container">
+          <div class="footer-container">
+            <a href="./index.html" class="logo page-footer__logo">
+              <span class="logo__text">Web</span>Studio
+            </a>
+            <!-- Контактна інформація -->
+            <address class="footer-address">
+              <ul class="address-list">
+                <li class="address-list__item">
+                  <a
+                    href="https://goo.gl/maps/ABmhvAyWDzysGnkC7"
+                    target="_blank"
+                    rel="noopener nofollow noreferrer"
+                    class="address-list__link address-list__link--inverse"
+                    >м. Київ, пр-т Лесі Українки, 26</a
+                  >
+                </li>
+                <li class="address-list__item">
+                  <a href="mailto:info@devstudio.com" class="address-list__link"
+                    >info@devstudio.com</a
+                  >
+                </li>
+                <li class="address-list__item">
+                  <a href="tel:+380961111111" class="address-list__link"
+                    >+38 096 111 11 11</a
+                  >
+                </li>
+              </ul>
+            </address>
+          </div>
+          <div class="footer-container">
+            <span class="footer-links__label">Приєднуйтесь</span>
+            <ul class="social-links">
+              <li class="social-links__item">
+                <a href="" class="social-links__link footer-social-links__link">
+                  <svg
+                    class="social-links__icon footer-social-links__icon"
+                    width="20"
+                    height="20"
+                  >
+                    <use href="./images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
               </li>
-              <li class="address-list__item">
-                <a href="mailto:info@devstudio.com" class="address-list__link"
-                  >info@devstudio.com</a
-                >
+              <li class="social-links__item">
+                <a href="" class="social-links__link footer-social-links__link">
+                  <svg
+                    class="social-links__icon footer-social-links__icon"
+                    width="20"
+                    height="20"
+                  >
+                    <use href="./images/icons.svg#icon-twitter"></use>
+                  </svg>
+                </a>
               </li>
-              <li class="address-list__item">
-                <a href="tel:+380961111111" class="address-list__link"
-                  >+38 096 111 11 11</a
-                >
+              <li class="social-links__item">
+                <a href="" class="social-links__link footer-social-links__link">
+                  <svg
+                    class="social-links__icon footer-social-links__icon"
+                    width="20"
+                    height="20"
+                  >
+                    <use href="./images/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social-links__item">
+                <a href="" class="social-links__link footer-social-links__link">
+                  <svg
+                    class="social-links__icon footer-social-links__icon"
+                    width="20"
+                    height="20"
+                  >
+                    <use href="./images/icons.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
               </li>
             </ul>
-          </address>
-        </div>
-        <div class="footer-container">
-          <span class="footer-links__label">Приєднуйтесь</span>
-          <ul class="social-links">
-            <li class="social-links__item">
-              <a href="" class="social-links__link footer-social-links__link">
-                <svg
-                  class="social-links__icon footer-social-links__icon"
-                  width="20"
-                  height="20"
-                >
-                  <use href="./images/icons.svg#icon-instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-links__item">
-              <a href="" class="social-links__link footer-social-links__link">
-                <svg
-                  class="social-links__icon footer-social-links__icon"
-                  width="20"
-                  height="20"
-                >
-                  <use href="./images/icons.svg#icon-twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-links__item">
-              <a href="" class="social-links__link footer-social-links__link">
-                <svg
-                  class="social-links__icon footer-social-links__icon"
-                  width="20"
-                  height="20"
-                >
-                  <use href="./images/icons.svg#icon-facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social-links__item">
-              <a href="" class="social-links__link footer-social-links__link">
-                <svg
-                  class="social-links__icon footer-social-links__icon"
-                  width="20"
-                  height="20"
-                >
-                  <use href="./images/icons.svg#icon-linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
+          </div>
         </div>
         <!-- Форма підписки -->
         <div class="mail-form-container">
-          <form action="" name="mail-form" autocomplete="off" class="mail-form">
+          <form name="mail-form" autocomplete="off" class="mail-form">
             <p class="mail-form__label">Підпишіться на розсилку</p>
             <input
               type="email"
@@ -459,5 +563,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

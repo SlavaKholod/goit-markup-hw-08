@@ -14,6 +14,45 @@
   transition: background-color $animation-time $timing-function;
 }
 
+// Кнопка відкриття моб-меню
+.menu-toggle {
+  position: absolute;
+  display: flex;
+  align-content: center;
+  right: 15px;
+  top: 10px;
+  display: block;
+  cursor: pointer;
+  border: none;
+  background-color: getColor("background-color");
+
+  & .icon-cross {
+    display: none;
+  }
+  &.is-open .icon-cross {
+    display: block;
+  }
+  &.is-open .icon-menu {
+    display: none;
+  }
+  &.is-open ~ .logo {
+    opacity: 0;
+  }
+  &:hover,
+  &:focus .icon-menu,
+  .icon-cross {
+    fill: getColor("btn-acsent");
+  }
+  @media screen and (min-width: 481px) {
+    display: none;
+  }
+}
+
+.icon-cross,
+.icon-menu {
+  fill: getColor("font-color-hed");
+}
+
 // Конопка виклику форми
 
 .hero__btn {
@@ -48,12 +87,28 @@
 .filter-buttons {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
+    justify-content: center;
+  }
+
+  @media screen and (min-width: getPoint("tablet")) {
+    justify-content: center;
+    margin-bottom: 50px;
+  }
 }
 
-.filter-buttons__item:not(:last-child) {
-  margin-right: 8px;
+.filter-buttons__item {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  @media screen and (max-width: getPoint("phone")) {
+    &:nth-child(-n + 3) {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .filter-buttons__btn {
@@ -81,7 +136,7 @@
   top: 8px;
   right: 8px;
   display: flex;
-  padding: 10px;
+  padding: 6px;
   cursor: pointer;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);

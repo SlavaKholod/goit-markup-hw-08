@@ -6,21 +6,67 @@
 }
 
 .footer-wraper {
-  display: flex;
-  align-items: baseline;
+  @media screen and (min-width: getPoint("tablet")) {
+    display: flex;
+  }
+}
+
+.footer-cotacts-container {
+  @media screen and (max-width: getPoint("phone")) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 80px 60px 80px;
+  }
+
+  @media screen and (min-width: getPoint("tablet")) {
+    display: flex;
+    align-items: baseline;
+  }
 }
 
 .footer-container {
-  display: inline-block;
-  margin-right: 70px;
-  vertical-align: top;
+  display: flex;
+
+  @media screen and (max-width: getPoint("phone")) {
+    flex-direction: column;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+
+  @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (min-width: getPoint("tablet")) {
+    display: inline-block;
+    margin-right: 70px;
+    vertical-align: top;
+  }
 }
 
 .page-footer__logo {
   display: block;
   margin-right: 0;
   margin-bottom: 20px;
+  padding: 0;
   color: getColor("background-color");
+}
+
+.address-list {
+  @media screen and (max-width: getPoint("tablet")) {
+    text-align: center;
+  }
+
+  @media screen and (min-width: getPoint("tablet")) {
+    text-align: left;
+  }
 }
 
 .address-list__item:not(:last-child) {
@@ -51,4 +97,3 @@
   text-transform: uppercase;
   color: getColor("background-color");
 }
- 
