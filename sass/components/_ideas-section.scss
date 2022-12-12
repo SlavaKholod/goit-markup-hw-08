@@ -16,7 +16,7 @@
     flex-flow: row wrap;
   }
 
-  @media screen and (min-width: getPoint("tablet")) {
+  @media screen and (min-width: 769px) {
     display: flex;
   }
 }
@@ -36,9 +36,12 @@
     &:nth-child(2n) {
       margin-left: 30px;
     }
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
   }
 
-  @media screen and (min-width: getPoint("tablet")) {
+  @media screen and (min-width: 769px) {
     width: calc((100% - 90px) / 4);
     &:not(:last-child) {
       margin-right: 30px;

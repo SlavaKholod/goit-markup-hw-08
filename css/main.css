@@ -14,6 +14,7 @@ body {
   color: #757575;
   font-size: 14px;
   letter-spacing: 0.03em;
+  width: 100vw;
 }
 
 h1,
@@ -41,15 +42,15 @@ img {
 }
 @media screen and (max-width: 480px) {
   .container {
-    width: 480px;
+    max-width: 480px;
   }
 }
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .container {
-    width: 768px;
+    width: 100vw;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .container {
     max-width: 1200px;
   }
@@ -60,7 +61,7 @@ img {
     padding: 60px 0;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .section {
     padding: 94px 0;
   }
@@ -275,7 +276,7 @@ img {
             align-items: center;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .mail-form {
     display: inline-block;
     margin-left: auto;
@@ -306,11 +307,12 @@ img {
 }
 @media screen and (max-width: 768px) {
   .mail-form__input {
-    width: 450px;
+    max-width: 450px;
+    width: 100%;
     margin-bottom: 20px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .mail-form__input {
     width: 358px;
     margin-right: 12px;
@@ -633,7 +635,7 @@ img {
     margin-left: auto;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .contacts {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -650,7 +652,7 @@ img {
     margin-bottom: 10px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .contacts__item:nth-child(1) {
     margin-right: 50px;
   }
@@ -832,7 +834,7 @@ img {
             flex-flow: row wrap;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .ideas__list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -865,8 +867,11 @@ img {
   .ideas__item:nth-child(2n) {
     margin-left: 30px;
   }
+  .ideas__item:nth-last-child(-n+2) {
+    margin-bottom: 0;
+  }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .ideas__item {
     width: calc((100% - 90px) / 4);
     margin-bottom: 0;
@@ -947,7 +952,7 @@ img {
             flex-flow: row wrap;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .team-list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -974,8 +979,11 @@ img {
   .team-list__item:nth-child(2n) {
     margin-left: 30px;
   }
+  .team-list__item:nth-last-child(-n+2) {
+    margin-bottom: 0;
+  }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .team-list__item {
     width: calc((100% - 90px) / 4);
     margin-bottom: 0;
@@ -1014,6 +1022,12 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .client-list__item {
@@ -1042,7 +1056,7 @@ img {
     margin-bottom: 0;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .client-list__item {
     margin-bottom: 0;
   }
@@ -1085,7 +1099,7 @@ img {
   background-color: #2f303a;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .footer-wraper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1109,7 +1123,7 @@ img {
     margin: 0 80px 60px 80px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .footer-cotacts-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1150,7 +1164,7 @@ img {
             align-items: center;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .footer-container {
     display: inline-block;
     margin-right: 70px;
@@ -1171,7 +1185,7 @@ img {
     text-align: center;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .address-list {
     text-align: left;
   }

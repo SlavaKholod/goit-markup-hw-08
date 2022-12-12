@@ -13,6 +13,7 @@ body {
   color: getColor("font-color-text");
   font-size: getFonts("font-size");
   letter-spacing: getFonts("letter-spacing");
+  width: 100vw;
 }
 
 h1,
@@ -39,12 +40,13 @@ img {
   padding: 0 15px;
 
   @media screen and (max-width: getPoint("phone")) {
-    width: getPoint("phone");
+    max-width: getPoint("phone");
   }
   @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
-    width: getPoint("tablet");
+    // max-width: getPoint("tablet");
+    width: 100vw;
   }
-  @media screen and (min-width: getPoint("tablet")) {
+  @media screen and (min-width: 769px) {
     max-width: getPoint("desktop");
   }
 }
@@ -53,7 +55,7 @@ img {
   @media screen and (max-width: getPoint("tablet")) {
     padding: 60px 0;
   }
-  @media screen and (min-width: getPoint("tablet")) {
+  @media screen and (min-width: 769px) {
     padding: 94px 0;
   }
 }

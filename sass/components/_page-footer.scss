@@ -6,7 +6,7 @@
 }
 
 .footer-wraper {
-  @media screen and (min-width: getPoint("tablet")) {
+  @media screen and (min-width: 769px) {
     display: flex;
   }
 }
@@ -22,7 +22,7 @@
     margin: 0 80px 60px 80px;
   }
 
-  @media screen and (min-width: getPoint("tablet")) {
+  @media screen and (min-width: 769px) {
     display: flex;
     align-items: baseline;
   }
@@ -44,7 +44,7 @@
     align-items: center;
   }
 
-  @media screen and (min-width: getPoint("tablet")) {
+  @media screen and (min-width: 769px) {
     display: inline-block;
     margin-right: 70px;
     vertical-align: top;
@@ -64,7 +64,7 @@
     text-align: center;
   }
 
-  @media screen and (min-width: getPoint("tablet")) {
+  @media screen and (min-width: 769px) {
     text-align: left;
   }
 }

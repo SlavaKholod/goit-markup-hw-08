@@ -131,7 +131,7 @@
     margin-left: auto;
   }
 
-  @media screen and (min-width: getPoint("tablet")) {
+  @media screen and (min-width: 769px) {
     display: flex;
     align-items: center;
     margin-left: auto;
@@ -144,7 +144,7 @@
     }
   }
 
-  @media screen and (min-width: getPoint("tablet")) {
+  @media screen and (min-width: 769px) {
     &:nth-child(1) {
       margin-right: 50px;
     }
