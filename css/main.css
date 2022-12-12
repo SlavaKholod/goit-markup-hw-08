@@ -1221,7 +1221,7 @@ img {
     padding: 60px 0;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .portfolio {
     padding: 94px 0;
   }
@@ -1259,7 +1259,7 @@ img {
     height: 146px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .portfolio-item {
     width: calc((100% - 60px) / 3);
   }
