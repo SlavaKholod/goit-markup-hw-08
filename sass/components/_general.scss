@@ -43,8 +43,7 @@ img {
     max-width: getPoint("phone");
   }
   @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
-    // max-width: getPoint("tablet");
-    width: 100vw;
+    max-width: getPoint("tablet");
   }
   @media screen and (min-width: 769px) {
     max-width: getPoint("desktop");
@@ -70,7 +69,7 @@ img {
   @media screen and (max-width: getPoint("tablet")) {
     margin-bottom: 30px;
   }
-  @media screen and (min-width: getPoint("tablet")) {
+  @media screen and (min-width: 769px) {
     margin-bottom: 50px;
   }
 }

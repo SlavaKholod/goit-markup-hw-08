@@ -8,6 +8,7 @@
   flex-flow: row wrap;
   align-items: center;
   position: relative;
+  justify-content: space-between;
 
   @media screen and (max-width: getPoint("phone")) {
     min-height: 60px;
@@ -35,7 +36,7 @@
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
-  margin-right: 93px;
+  // margin-right: 93px;
   color: getColor("font-color-hed");
 }
 
@@ -128,13 +129,13 @@
   }
 
   @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
-    margin-left: auto;
+    // margin-left: auto;
   }
 
   @media screen and (min-width: 769px) {
     display: flex;
     align-items: center;
-    margin-left: auto;
+    // margin-left: auto;
   }
 }
 .contacts__item {

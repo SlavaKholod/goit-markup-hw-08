@@ -24,7 +24,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  min-width: 450px;
+  width: calc(100vw - 10px);
+  max-width: 450px;
   min-height: 609px;
   padding: 40px;
   background-color: getColor("background-color");
