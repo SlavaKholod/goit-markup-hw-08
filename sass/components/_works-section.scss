@@ -1,10 +1,11 @@
 //   Стилі секції ПРИКЛАДИ РОБІТ
 
 .works {
-  padding-top: 0;
+  display: none;
 
-  @media screen and (max-width: getPoint("tablet")) {
-    display: none;
+  @media screen and (min-width: 769px) {
+    display: block;
+    padding-top: 0;
   }
 }
 

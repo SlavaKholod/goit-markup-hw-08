@@ -6,48 +6,63 @@
   background-position: center;
   background-color: getColor("brand-color-second");
   background-size: cover;
-  background-image: linear-gradient(
-    rgba(47, 48, 58, 0.4),
-    rgba(47, 48, 58, 0.4)
-  ),
-  url("../images/hero-cover-1600.jpg");
-
   @media screen and (max-width: getPoint("phone")) {
-    // background-image: linear-gradient(
-    //   rgba(47, 48, 58, 0.4),
-    //   rgba(47, 48, 58, 0.4)
-    // ),
-    // url("../images/hero-cover-480.jpg");
-    padding: 118px 0;
-  }
-
-  @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
-    // background-image: linear-gradient(
-    //   rgba(47, 48, 58, 0.4),
-    //   rgba(47, 48, 58, 0.4)
-    // ),
-    // url("../images/hero-cover-768.jpg");
-    padding: 118px 0;
-  }
-
-  @media screen and (min-width: getPoint("tablet")) {
-    // background-image: linear-gradient(
-    //   rgba(47, 48, 58, 0.4),
-    //   rgba(47, 48, 58, 0.4)
-    // ),
-    // url("../images/hero-cover-1600.jpg");
-    padding: 200px 0;
-    max-width: 1600px;
-  }
-  
-  @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
     background-image: linear-gradient(
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
-    url("../images/hero-cover-3200.jpg");
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("../images/hero-cover-480.jpg");
+    padding: 118px 0;
+    // height: 400px;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url("../images/hero-cover-960.jpg");
+    }
+  }
+  @media screen and (min-width: 481px) and (max-width: getPoint("tablet")) {
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("../images/hero-cover-768.jpg");
+    padding: 118px 0;
+    // height: 400px;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url("../images/hero-cover-1536.jpg");
+    }
+  }
+  @media screen and (min-width: 769px) {
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url("../images/hero-cover-1600.jpg");
+    padding: 200px 0;
+    // height: 600px;
+    max-width: 1600px;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: linear-gradient(
+          rgba(47, 48, 58, 0.4),
+          rgba(47, 48, 58, 0.4)
+        ),
+        url("../images/hero-cover-3200.jpg");
+    }
   }
 }
 
@@ -60,4 +75,9 @@
   text-transform: uppercase;
   color: getColor("background-color");
   margin-bottom: 30px;
+
+  @media screen and (max-width: getPoint("tablet")) {
+    font-size: 26px;
+    line-height: 1.61;
+  }
 }
